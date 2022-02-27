@@ -1,0 +1,111 @@
+:root {
+  --input-height: 2.2rem;
+  --input-radius: 0.3rem;
+}
+
+body {
+  background-color: #f9f9fb;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: rgb(32, 32, 32);
+}
+
+h1 {
+  text-align: center;
+}
+
+h1 span {
+  position: relative;
+  top: 0.7rem;
+  left: 0.7rem;
+}
+
+main {
+  max-width: 50ch;
+  margin: auto;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1.2rem;
+}
+
+label {
+  flex: 1 1 auto;
+}
+
+label span:nth-child(1) {
+  display: block;
+  font-weight: bold;
+}
+
+label span:nth-child(2) {
+  display: block;
+  font-size: small;
+  color: grey;
+  font-style: italic;
+}
+
+input {
+  box-sizing: border-box;
+  width: 100%;
+  height: var(--input-height);
+  margin-top: 0.3rem;
+  font-size: 1rem;
+  border-radius: var(--input-radius) 0 0 var(--input-radius);
+  border: 1px solid rgb(180, 176, 176);
+  outline: none;
+  padding: 0 0.7rem;
+}
+
+.form--hover:hover {
+  box-shadow: 0 0 0.5rem rgba(30, 143, 255, 0.5);
+}
+
+button {
+  align-self: end;
+  height: var(--input-height);
+  width: 4rem;
+  border-radius: 0 var(--input-radius) var(--input-radius) 0;
+  border: none;
+  background-color: rgb(53, 153, 253);
+  color: white;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: rgb(51, 143, 236);
+}
+
+to-do {
+  background-color: #f8f8b9;
+  margin: 0.5rem 0;
+}
+
+to-do.grabbed {
+  position: relative;
+  pointer-events: none; /* for document.elementFromPoint() */
+  box-shadow: 0 0.4rem 1rem 0.2rem rgba(0, 0, 0, 0.3);
+  transform: scale(1.02);
+}
+
+to-do.before-appearance {
+  opacity: 0;
+  transform: translateY(-3rem);
+}
+
+.appearable {
+  transition: 0.2s ease-in;
+}
+
+to-do.flying {
+  position: relative;
+  z-index: -1;
+}
+
+to-do.landed {
+  position: relative;
+  left: 0px;
+  top: 0px;
+}
